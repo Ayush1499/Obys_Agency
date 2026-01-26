@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #eaeff7 40%, #c0e7fa 100%);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 380px;
+      background: #fff;
+      padding: 34px 30px 24px 30px;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px rgba(58,90,149, 0.08);
+      text-align: center;
+      border: 1px solid #e1e1e1;
+    }
+    h1 {
+      font-size: 2.2em;
+      color: #3a5a95;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    label {
+      font-weight: 500;
+      color: #456093;
+      display: block;
+      margin: 19px 0 8px 0;
+      font-size: 1.08em;
+    }
+    input[type="date"] {
+      width: 82%;
+      padding: 7px 11px;
+      border: 1.5px solid #b2d3ef;
+      border-radius: 6px;
+      font-size: 18px;
+      background: #f4fafe;
+      outline: none;
+      transition: border 0.2s;
+      margin-bottom: 12px;
+    }
+    input[type="date"]:hover,
+    input[type="date"]:focus {
+      border: 2px solid #69b5fb;
+      background: #e5f2fe;
+    }
+    button {
+      margin-top: 17px;
+      padding: 10px 27px;
+      font-size: 17px;
+      font-weight: 500;
+      color: #fff;
+      background: linear-gradient(110deg, #5396f7 60%, #41d4ea 140%);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(65,171,234,0.11);
+    }
+    button:hover,
+    button:active {
+      background: linear-gradient(110deg, #47afe8 60%, #54eafe 140%);
+    }
+    #ageResult {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #3a5a95;
+      background: #f7fcff;
+      border-radius: 8px;
+      padding: 13px 0;
+      border: 1px dashed #bce0fa;
+      font-weight: 500;
+      line-height: 1.8;
+      min-height: 38px;
+      transition: background 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <label for="dob">Enter your Birthdate:</label>
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="ageResult">0 years, 0 months, 0 days</div>
+  </div>
+
+  <!-- Use your previous HTML/CSS structure -->
+<div class="container">
+  <h1>Age Calculator</h1>
+  <label for="dob">Enter your Birthdate:</label>
+  <input type="date" id="dob">
+  <button onclick="calculateAge()">Calculate Age</button>
+  <div id="ageResult" style="opacity:0; transition:opacity 0.7s;">0 years, 0 months, 0 days</div>
+</div>
+
+<script>
+function animateValue(element, start, end, suffix="", duration=800) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start) + suffix;
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            element.textContent = end + suffix;
+        }
+    };
+    requestAnimationFrame(step);
+}
+
+function calculateAge() {
+  const dobInput = document.getElementById('dob').value;
+  const result = document.getElementById('ageResult');
+  if (!dobInput) {
+    result.textContent = 'Please enter your date of birth';
+    result.style.opacity=1;
+    return;
+  }
+  const birthDate = new Date(dobInput);
+  const today = new Date();
+  if (birthDate > today) {
+    result.textContent = 'Birthdate cannot be in the future';
+    result.style.opacity=1;
+    return;
+  }
+  let years = today.getFullYear() - birthDate.getFullYear();
+  let months = today.getMonth() - birthDate.getMonth();
+  let days = today.getDate() - birthDate.getDate();
+  if (days < 0) {
+    months--;
+    const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  const totalDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
+  let nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (nextBirthday < today) {
+    nextBirthday.setFullYear(today.getFullYear() + 1);
+  }
+  const daysToNextBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+  result.innerHTML = `<span id="countYears"></span> years, <span id="countMonths"></span> months, <span id="countDays"></span> days<br>
+    <span id="countTotalDays"></span><br>
+    <span id="countNextBirthday"></span>`;
+
+  result.style.opacity = 0.2;
+  setTimeout(() => { result.style.opacity = 1; }, 80); // quick fade-in
+
+  animateValue(document.getElementById("countYears"), 0, years, "", 700);
+  animateValue(document.getElementById("countMonths"), 0, months, "", 700);
+  animateValue(document.getElementById("countDays"), 0, days, "", 700);
+  animateValue(document.getElementById("countTotalDays"), 0, totalDays, " Total age in days", 800);
+  animateValue(document.getElementById("countNextBirthday"), 0, daysToNextBirthday, " Days until next birthday", 900);
+}
+</script>
+
+</body>
+</html>

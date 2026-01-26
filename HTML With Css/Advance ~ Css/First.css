@@ -1,0 +1,13 @@
+header{
+    h1{
+    color: blue;
+    text-align: center;
+    background-color: black;
+    border-radius: 1px;
+    box-shadow: inset;
+}
+img{
+    height: 400px;
+    width: 700px;
+}
+}

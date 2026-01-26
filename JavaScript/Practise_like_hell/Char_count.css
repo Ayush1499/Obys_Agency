@@ -1,0 +1,12 @@
+body{
+    padding: 40px;
+}
+textarea {
+    height: 100px;
+    width: 300px;
+    padding: 10px; /* Text thoda andar rahega, chipkega nahi */
+    border-radius: 8px; /* Corners round ho jayenge */
+    border: 2px solid burlywood;
+    outline-color: cadetblue;
+    resize: none; /* User box ko kheench kar bada nahi kar payega */
+}

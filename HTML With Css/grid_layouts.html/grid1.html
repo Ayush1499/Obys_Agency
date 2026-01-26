@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Layout</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: lavender;
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-columns: repeat(4,1fr);
+            padding: 40px;
+        }
+        .item{
+            background-color: blueviolet;
+            border: 5px solid rgb(255, 255, 255);
+        }
+        .first{
+            background-color: brown;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .second{
+            background-color: rgb(9, 99, 131);
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .third{
+            background-color: rgb(214, 211, 27);
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item first"></div>
+        <div class="item second"></div>
+        <div class="item third"></div>
+    </div>
+</body>
+</html>

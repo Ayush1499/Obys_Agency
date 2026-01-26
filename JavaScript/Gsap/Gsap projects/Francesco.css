@@ -1,0 +1,86 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: 400;
+    overflow: hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 10%;
+    width: 97%;
+    /* background-color: aqua; */
+}
+#nav_part2{
+    display: flex;
+    gap: 30px;
+}
+section{
+    margin-top: 10vw;
+    width: 99.7%;
+    height: 70%;
+    
+}
+section h1{
+    font-size: 100px;
+    /* background-color: brown; */
+    position: relative;
+    z-index: 9;
+}
+section h1:nth-child(1){
+    text-align: start;
+    margin-left: 20vw;
+}
+section h1:nth-child(2){
+    text-align: center;
+}
+section h1:nth-child(3){
+    text-align: center;
+    margin-left: 40vw;
+}
+img{
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    left:46%;
+    top: 13%;
+}
+#img1{
+    rotate: 15deg;
+}
+#img2{
+    rotate: 8deg;
+}
+footer{
+    /* background-color: blue; */
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+footer h3{
+    /* background-color: aqua; */
+    margin-left: 20px;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 20px;
+}

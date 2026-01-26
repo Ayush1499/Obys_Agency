@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nineth Layout</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: lavender;
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(4,1fr);
+            padding: 40px;
+        }
+        .item{
+            background-color: blueviolet;
+            border: 5px solid rgb(255, 255, 255);
+        }
+        .first{
+            background-color: brown;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        .second{
+            background-color: rgb(9, 99, 131);
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .third{
+            background-color: rgb(214, 211, 27);
+            grid-column-start: 3;
+            grid-column-end: 5;
+
+        }.fourth{
+            background-color: rgb(42, 44, 165);
+        }.fifth{
+            background-color: rgb(13, 215, 118);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item first">1</div>
+        <div class="item second">2</div>
+        <div class="item third">3</div>
+        <div class="item fourth">4</div>
+        <div class="item fifth">5</div>
+    </div>
+</body>
+</html>

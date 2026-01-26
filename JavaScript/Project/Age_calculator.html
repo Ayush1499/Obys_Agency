@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator</title>
+  <style>
+    .container {
+      max-width: 360px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #f5f5f5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+    label { font-weight: bold; display: block; margin: 19px 0 10px 0; }
+    input[type="date"] { width: 70%; padding: 4px; }
+    button { margin-top: 15px; padding: 8px 18px; font-size: 15px; cursor: pointer; }
+    #ageResult {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #234982;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <label for="dob">Enter your Birthdate:</label>
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="ageResult">0 years, 0 months, 0 days</div>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const dobInput = document.getElementById('dob').value;
+      const result = document.getElementById('ageResult');
+
+      if (!dobInput) {
+        result.textContent = 'Please enter your date of birth';
+        return;
+      }
+
+      const birthDate = new Date(dobInput);
+      const today = new Date();
+
+      if (birthDate > today) {
+        result.textContent = 'Birthdate cannot be in the future';
+        return;
+      }
+
+      let years = today.getFullYear() - birthDate.getFullYear();
+      let months = today.getMonth() - birthDate.getMonth();
+      let days = today.getDate() - birthDate.getDate();
+
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      const totalDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
+
+      let nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+      if (nextBirthday < today) {
+        nextBirthday.setFullYear(today.getFullYear() + 1);
+      }
+      const daysToNextBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
+
+      result.innerHTML = `
+        ${years} years, ${months} months, ${days} days<br>
+        Total age in days: ${totalDays}<br>
+        Days until next birthday: ${daysToNextBirthday}
+      `;
+    }
+  </script>
+</body>
+</html>

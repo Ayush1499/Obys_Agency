@@ -1,0 +1,45 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #F7F7EE;
+}
+#page2{
+    padding: 5vw;
+    width: 100%;
+    height: 100vh;
+    background-color: #5B6647;
+}
+#page2 h1{
+    font-size: 4.8vw;
+    font-weight: 500;
+    color:#434B34;
+    line-height: 4.5vw;
+    text-align: center;
+}
+
+#page2 h1 span {
+    transform: translateY(20px);
+    display: inline-block;
+    white-space: pre;      /* Ye sabse important hai spaces ko sahi rakhne ke liye */
+    overflow: visible;     /* Taaki wo ajeeb se bars gayab ho jayein */
+    pointer-events: none;  /* Taaki letters par click karne se widget na khule */
+}
+
+#page2 h1 {
+    overflow: visible;     /* Parent container ko bhi clean rakhein */
+}
+
+#page3{
+    width: 100%;
+    height: 100vh;
+    background-color: #F7F7EE;
+}

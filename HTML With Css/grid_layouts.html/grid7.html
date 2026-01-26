@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seventh Layout</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: lavender;
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(4,1fr);
+            padding: 40px;
+        }
+        .item{
+            background-color: blueviolet;
+            border: 5px solid rgb(255, 255, 255);
+        }
+        .first{
+            background-color: brown;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .second{
+            background-color: rgb(9, 99, 131);
+            grid-column-start:3;
+            grid-column-end: 5;
+        }
+        .third{
+            background-color: rgb(214, 211, 27);
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }.fourth{
+            background-color: rgb(42, 44, 165);
+            grid-column-start:3;
+            grid-column-end: 5;
+
+        }.fifth{
+            background-color: rgb(13, 215, 118);
+        }.sixth{
+            background-color: rgb(242, 30, 228);
+        }
+        .seventh{
+            background-color: rgb(103, 107, 99);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item first"></div>
+        <div class="item second"></div>
+        <div class="item third"></div>
+        <div class="item fourth"></div>
+        <div class="item fifth"></div>
+        <div class="item sixth"></div>
+        <div class="item seventh"></div>
+
+    </div>
+</body>
+</html>

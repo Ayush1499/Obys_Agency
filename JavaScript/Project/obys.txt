@@ -1,0 +1,61 @@
+/* #page5{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    margin-top: 5vw;
+}
+.elem{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: 1vw;
+    display: flex;
+}
+.elem h4{
+    font-size: 7vw;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    display: inline-block;
+    animation-name: marquee;
+    animation-duration: 13s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    flex-shrink: 0;
+}
+@keyframes marquee {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(calc(-100% - 4px));
+    }
+}
+.elem2{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: 1vw;
+    display: flex;
+}
+.elem2 h4{
+    font-size: 7vw;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    display: inline-block;
+    animation-name: marquee;
+    animation-duration: 13s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    flex-shrink: 0;
+}
+.elem span{
+    font-family: "Silk Serif";
+    color: transparent;
+}
+.elem2 span{
+    font-family: "Silk Serif";
+    color: transparent;
+} */

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            height: 1000px;
+            border: 5px black solid;
+            display: flex;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px black solid;
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: rgb(19, 6, 199);
+        }
+        #box3{
+            background-color: rgb(248, 0, 0);
+        }
+        #box4{
+            background-color: rgb(255, 255, 0);
+        }
+        @media (min-width:400px)
+        {
+            .container{
+                flex-direction:row;
+                 background-color: black;
+            }
+            /* .container{
+                background-color: black;
+            } */
+        }
+        @media (max-width:400px)
+        {
+            .container{
+                flex-direction: column;
+                background-color: rgba(14, 140, 198, 0.94);
+            }
+            /* .container{
+                background-color: rgba(14, 140, 198, 0.94);
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">A</div>
+        <div class="box" id="box2">B</div>
+        <div class="box" id="box3">C</div>
+        <div class="box" id="box4">D</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    padding: 20px;
+    background-color: rgb(111, 171, 171);
+}
+#nav{
+    width: 25%;
+    height: 20%;
+    /* background-color: rgb(106, 44, 44); */
+    display: flex;
+    justify-content: space-evenly;
+}
+.navs{
+    font-size: 25px;
+    font-weight: 800;
+    padding: 5px;
+    border: 5px solid rgb(170, 164, 164);
+    border-radius: 10px;
+    cursor: pointer;
+}
+h3{
+    display: none;
+    height: 80%;
+    width: 50%;
+    margin: 10px;
+    margin-top: 20px;
+}

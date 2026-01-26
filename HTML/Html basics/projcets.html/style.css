@@ -1,0 +1,117 @@
+
+  :root {
+    --primary-color: #2e86de;
+    --background-color: #f2f4f8;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --nav-hover: #1b4f72;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  header, section, main, footer {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: #e2eafc;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 25px;
+    margin-top: 10px;
+  }
+
+  iframe, video {
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+
+  audio {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    padding-bottom: 10px;
+  }
+   
+  /* Smooth fade-in for major sections */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+header, section, main, footer {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Bounce-in effect for headings */
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+h1, h2 {
+  animation: bounceIn 0.8s ease-in;
+}
+
+/* Hover animation for nav links */
+nav a {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-color: var(--primary-color);
+  color: white;
+}

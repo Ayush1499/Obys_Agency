@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            border: 5px solid black;
+            display: flex;
+        }
+        #box_1{
+            height: 50%;
+            width: 47%;
+            background-color: rgb(5, 157, 195);
+            border: 5px solid black;
+        }
+        #image{
+            height: 50%;
+            width: 47%;
+            border: 5px solid black;
+        }
+        @media (max-width:640px)
+        {
+            .container{
+                background-color: brown;
+                flex-direction: column;
+                justify-content: start;
+            }
+        }
+        /* write now on a laptop screen (size>640px) */
+        @media (min-width:640px)
+        {
+            .container{
+                background-color: blue;
+                flex-direction:row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box_1">
+            <h1>Text1</h1>
+            <h1>Text2</h1>
+        </div>
+        <div class="box" id="box_2">
+            <img src="DEF_OCTA_25MY_DYNAMIC_07.jpg" alt="Defender" id="image">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form>
+        <h1> Complex Forms </h1>
+        <fieldset>
+            <legend>personal information</legend>
+            <label for="fname">Name: </label>
+        <input type="text" name="text" id="fname">
+        <label for="fmail">Email: </label>
+        <input type="email" name="email" id="fname">
+        <label for="phone">phone:</label>
+        <input type="tel" name="contact" id="phone">
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="date" id="dob">
+        <label for="gender" name="first">gender</label>
+        <input type="radio" name="first" id="male">
+        <label for="male" name="first">male</label>
+        <input type="radio" name="first" id="female">
+        <label for="female" name="first">female</label>
+        <label for="Education">Highest Education:</label>
+        <!-- <select name="find" id="Education:">
+            <option value="High School">High School</option>
+            <option value="College">College</option>
+            <option value="School">School</option> -->
+        </fieldset>
+        <fieldset>
+            <legend>
+                <label for="address street">Address</label>
+                <input type="text" id="address street">
+                <label for="address city">city</label>
+                <input type="text" id="address city">
+                <label for="zip">Zip code</label>
+                <input type="number" id="zip">
+            </legend>
+        </fieldset>
+        <fieldset>
+            <legend>other information</legend>
+            <label for="com">comments</label>
+            <textarea id="com"></textarea>
+            <label for="check">I agree to the service</label>
+            <input type="checkbox" id="check">
+        </fieldset>
+        <button>submit</button>
+    </form>
+</body>
+</html>

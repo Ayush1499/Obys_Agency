@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A cotton weave</title>
+    <link
+    <!-- href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/> -->
+    <link rel="stylesheet" href="Cotton.css">
+    
+    <link rel="shortcut icon" href="download.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="heading">
+                <h1>a Cotton <br>Weave.</h1>
+            </div>
+            <div class="bottom">
+                <div class="item" id="item1">colors</div>
+                <div class="item" id="item2"></div>
+                <div class="item" id="item3"></div>
+            </div>
+            <div class="left_details">
+                <h3 id="detail">Details</h3>
+                <p id="para">Fashion design blends creativity and functionality to craft clothing and accessories that express identity, culture, and innovation. It involves sketching, fabric selection, pattern making, and styling. Designers explore trends, silhouettes, and textures to create visually striking, wearable art that reflects personal style and societal shifts across seasons and generations.</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_top">
+                <h3>$ 448</h3>
+                <h3>add to cart <i class="ri-shopping-bag-line"></i></h3>
+                <button id="modeToggle">Toggle Mode</button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1755278338952-39f52d8e6eab?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fashion">
+            <h1 id="pay"><a href="#" id="buyBtn">Buy now</a></h1>
+            <h3 id="tag">Elegance. Edge. Every single thread.</h3>
+        </div>
+    </div>
+<script>
+  const toggleBtn = document.getElementById("modeToggle");
+  // Load saved theme on page load
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+  function updateButton() {
+    if (document.body.classList.contains("dark")) {
+      toggleBtn.textContent = "🌞 Light Mode";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleBtn.textContent = "🌙 Dark Mode";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    updateButton();
+  });
+  // Set initial button label
+  updateButton();
+    const buyBtn = document.getElementById("buyBtn");
+  buyBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent actual navigation
+
+    buyBtn.classList.add("done");
+
+    // Optional: show a message
+    buyBtn.textContent = "✔ Done";
+
+    // Reset after animation
+    setTimeout(() => {
+      buyBtn.classList.remove("done");
+      buyBtn.textContent = "Buy now";
+    }, 1200);
+  });
+</script>
+</body>
+</html>
