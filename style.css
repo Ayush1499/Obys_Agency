@@ -1,0 +1,1430 @@
+@font-face {
+    font-family: "plain light";
+    src: url(./font-style/plain-regular-webfont.ttf);
+}
+@font-face {
+    font-family: "plain light";
+    src: url(./font-style/plain-regular-webfont.ttf);
+}
+@font-face {
+    font-family: "Silk Serif";
+    src: url(./font-style/silkserif-lightitalic-webfont.ttf);
+}
+@font-face {
+    font-family: "Silk Serif";
+    src: url(./font-style/silkserif-regularitalic-webfont.ttf);
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: white;
+    font-family: "Plain Light";
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #151414;
+    /* overflow-y: auto; */
+    /* overflow-x: hidden; */
+}
+#crsr{
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99999;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    /* Initial position screen se bahar rakhein taaki glitch na ho */
+    top: 0;
+    left: 0;
+    
+}
+#loader{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color:#1a1919 ;
+    padding: 20vh 10vw;
+}
+.line{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    /* background-color: burlywood; */
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 3vw;
+}
+#line1-part1{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 1vw;
+    /* background-color: antiquewhite; */
+}
+#line1-part1 h5, #line1-part1 h6{
+    font-size: 3.5vw;
+    font-family: "Silk Serif";
+    font-weight: 200;
+}
+#line1-part1 h5{
+    width: 5vw;
+    text-align: right;
+}
+#line1-part1 h6{
+    margin-left: 1vw;
+}
+.line h1{
+    font-family: "Plain Light";
+    font-size: 6.5vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.line h2 {
+    font-family: "Plain Light";
+    font-size: 6.5vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    -webkit-animation-name: blink;
+            animation-name: blink;
+    -webkit-animation-duration: 3.8s;
+            animation-duration: 3.8s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes blink {
+    0%, 20%, 67% {
+        font-family: "Plain Light";
+        font-weight: 500;
+        color: #ffffff; /* Explicitly set the solid color */
+        -webkit-text-stroke: 0px transparent; /* Remove the stroke */
+    }
+    40%, 100% {
+        font-family: "Silk Serif";
+        font-weight: 600;
+        color: transparent;
+        -webkit-text-stroke: 2px rgb(249, 249, 249);
+    }
+}
+
+@keyframes blink {
+    0%, 20%, 67% {
+        font-family: "Plain Light";
+        font-weight: 500;
+        color: #ffffff; /* Explicitly set the solid color */
+        -webkit-text-stroke: 0px transparent; /* Remove the stroke */
+    }
+    40%, 100% {
+        font-family: "Silk Serif";
+        font-weight: 600;
+        color: transparent;
+        -webkit-text-stroke: 2px rgb(249, 249, 249);
+    }
+}
+#main{
+    position: relative; 
+}
+#page1{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#bg-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Places the video behind your content */
+    -o-object-fit: cover;
+       object-fit: cover; /* Ensures the video covers the area without stretching */
+    -webkit-box-shadow: 0px 20px 40px 20px #000000;
+            box-shadow: 0px 20px 40px 20px #000000;
+}
+#nav{
+    padding: 2vw 7vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: 1.2vw;
+    position: relative;
+    z-index: 1000;
+    /* background-color: #FFA63D; */
+    margin-bottom: 10vw;
+}
+#nav-part2{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2.2vw;
+}
+#nav-part2 h4{
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.1vw;
+    font-weight: 520;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+.hero{
+    /* background-color: aqua; */
+    overflow: hidden;
+    width: 71%;
+    margin-left: 29%;
+    margin-top: 0.5vw;
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
+   height: fit-content;
+    /* background-color: aqua; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    z-index: 9999;
+}
+.hero h1{
+    font-size: 7vw;
+    line-height: 6vw;
+    text-transform: uppercase;
+    overflow-y: hidden;
+    position: relative;
+}
+#page1>h2{
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 400;
+    position: absolute;
+    left: 20%;
+    top: 28%;
+}
+#hero3 h2{
+    font-size: 7.3vw;
+    line-height: 7.5vw;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-bottom: 0.8vw solid #fff;
+    padding-bottom: 0.5vw;
+    margin: 0.5vw;
+    margin-right: 0.4vw;
+    /* transition: all 0.2s ease-out ; */
+}
+#hero3 h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    border-color: transparent;
+}
+#flag{
+    height: 25vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    opacity: 0;
+}
+#hero3{
+    position: relative;
+    z-index: 999;
+}
+#page2{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+#video-container{
+    width: 72%;
+    height: 70vh;
+    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    margin-left: 28%;
+    position: relative;
+    margin-top: 15vw;
+    background-size: cover;
+    background-position: center;
+}
+#video-container video{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 0;
+}
+#video-cursor{
+    width: 8.5vw;
+    height: 8.5vw;
+    background-color: #FFA63D;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top:-10%;
+    left:70%;
+    z-index: 1;
+}
+#video-cursor i{
+    font-size: 2vw;
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: #5e5d5d; */
+    position: relative;
+    /* padding: 0 4vw; */
+}
+#page3 h1{
+    text-transform: uppercase;
+    font-size: 7vw;
+    font-weight: 600;
+    margin-left: 31vw;
+    position: relative;
+    margin-bottom: 5vw;
+}
+#page3 h1::before{
+    content: "02";
+    font-size: 3vw;
+    position: absolute;
+    font-family: "silk serif";
+    left: -12%;
+    top: 10%;
+}
+.underline{
+    border: 1px solid #fff;
+    margin-left: 31vw;
+    margin-right: 5vw;
+}
+.image-container-div{
+    margin-top: 5vw;
+    /* background-color: rgb(252, 23, 11); */
+    position: relative;
+    padding: 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.image-div{
+    /* background-color: #3F7DF4; */
+    position: relative;
+    overflow: hidden;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin:1vw;
+    visibility: hidden;
+}
+.image-div:nth-child(1){
+    width: 24vw;
+    height: 30vw;
+}
+.image-div:nth-child(2){
+    width: 30vw;
+    height:38vw;
+}
+.image-div img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+}
+.page3-circle{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 24vw;
+    margin-left: 9vw;
+}
+.page3-circle svg{
+    width: 26%;
+}
+.page3-circle2{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 5.5vw;
+    margin-left: 1vw;
+}
+.page3-circle2 svg{
+    width: 26%;
+    rotate: -45deg;
+}
+.image-div:nth-child(5){
+    width: 30vw;
+    height: 35vw;
+    margin-top: 19vw;
+    margin-left: 2vw;
+}
+.image-div:nth-child(6){
+    width: 30vw;
+    height: 35vw;
+    margin-top: 9.5vw;
+}
+.image-div:nth-child(7){
+    width: 23vw;
+    height: 29vw;
+}
+.page3-circle3{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 39.5vw;
+    margin-left: 9vw;
+}
+.page3-circle3 svg{
+    width: 26%;
+    rotate: -90deg;
+}
+.image-div:nth-child(9){
+    width: 31vw;
+    height: 40vw;
+    margin-top: 18vw;
+    margin-left: 2vw;
+}
+.page3-project-circle{
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #FFA63D;
+    margin-top: 15vw;
+    margin-left: 34vw;
+}
+.page3-project-circle p{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1vw;
+}
+.page3-project-circle p Span{
+    font-family: "Silk Serif";
+    font-size: 1vw;
+    font-weight: 500;
+}
+.circle-in{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    scale: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    background-color: #fff;
+}
+.circle-in p{
+    text-align: center;
+    width: 80%;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 1vw;
+    font-weight: 500;
+    scale: 0;
+    opacity: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    -webkit-transition-delay: 0.5s;
+         -o-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+}
+.page3-circle:hover .circle-in{
+    scale: 1;
+}
+.page3-circle:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle2:hover .circle-in{
+    scale: 1;
+}
+.page3-circle2:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle3:hover .circle-in{
+    scale: 1;
+}
+.page3-circle3:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#page4-content{
+    width: 72vw;
+    margin-left: 28%;
+    padding: 5vw 0;
+}
+#page4-content h1{
+    font-size: 7.6vw;
+    text-transform: uppercase;
+    position: relative;
+}
+#page4-content h1::before{
+    content: "03";
+    font-family: "Silk Serif";
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    left: -13%;
+    top:8%;
+}
+#underline{
+    width: 90%;
+    height: 2px;
+    background-color: #c62828;
+    margin: 5vw 0;
+}
+/* #page4-ke just ander wala paragraph */
+.wavetext{   
+    width: 50%;
+    font-size: 2.2vw;
+    font-weight: 500;
+    /* background-color: #FFA63D; */
+    overflow:visible;
+}
+.wavetext span {
+    -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+            transform: translateY(10px);
+    display: inline-block;
+    white-space: pre;      /* Ye sabse important hai spaces ko sahi rakhne ke liye */
+    overflow: visible;     /* Taaki wo ajeeb se bars gayab ho jayein */
+    pointer-events: none;  /* Taaki letters par click karne se widget na khule */
+}
+#page4-flex{
+    width: 70vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 28vw;
+    gap: 2.5vw;
+}
+#page4-flex img{
+    width: 45%;
+    height: 90vh;
+    margin-bottom: 10vh;
+}
+#page4-flex p{
+    width: 27%;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-right: 20vw;
+    font-size: 1.1vw;
+}
+#page4-blue-div{
+    width: 33vw;
+    height: 95vh;
+    background-color: #3F7DF4;
+    padding: 5vw 3vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: relative;
+    margin-top: -42vh;
+    margin-left: 50vw;
+}
+.blue-div-elem{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* justify-content: space-between; */
+    border-bottom:2px solid #ffffff;
+    gap: 20vh;
+    margin-bottom: 5vh;
+}
+.blue-div-elem h4{
+    font-size: 1.5vw;
+    margin-bottom: 5vh;
+    font-weight: 500;
+}
+.blue-div-elem p{
+    font-size: 1vw;
+    text-align: end;
+    width: 15vw;
+}
+#page5{
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 5vw;
+    overflow: hidden;
+}
+
+.elem, .elem2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;        /* Do h4 ko ek line mein chipka deta hai */
+    white-space: nowrap;
+    margin-bottom: 0.5vw;
+}
+
+.elem h4, .elem2 h4 {
+    font-size: 7vw;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;      /* Text ko pichakne (compress) se rokta hai */
+    padding-right: 2vw;  /* Word ke beech ka gap */
+    
+    -webkit-animation-name: marquee;
+    
+            animation-name: marquee;
+    -webkit-animation-duration: 15s;
+            animation-duration: 15s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
+/* Reverse direction for second and fourth row */
+.elem2 h4 {
+    animation-direction: reverse;
+}
+
+/* Keyframes - ab ye exact move karega */
+@-webkit-keyframes marquee {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%); /* Perfect loop ke liye */
+    }
+}
+@keyframes marquee {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%); /* Perfect loop ke liye */
+    }
+}
+
+/* Silk Serif text styling */
+.elem span, .elem2 span {
+    font-family: "Silk Serif"; /* Ensure ye font loaded ho */
+    color: transparent;               /* Outline ki jagah ye solid white dikhega */
+    -webkit-text-stroke: 1px #fff;    /* Isse serif font saaf dikhega */
+}
+#footer{
+    width: 73%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 27%;
+    margin-top: 8vw;
+}
+#footer h1{
+    text-transform: uppercase;
+    font-size: 7.5vw;
+    margin-bottom: 5vw;
+    position: relative;
+    opacity: 1;
+}
+#footer h1::before{
+    content: "04";
+    font-family: "Silk Serif";
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    left: -13%;
+    top:8%;
+}
+.underline-footer{
+    border: 1px solid #fff;
+    margin-right: 5vw;
+}
+#footer-div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-right: 15vw
+}
+.box{
+    margin: 6vw 0;
+}
+.box h6{
+    font-size: 1vw;
+    margin-bottom: 2vw
+}
+.box h5{
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+#footer h4{
+    margin: 3vw 0;
+}
+._canvas_container{
+    z-index: 99999 !important;
+    pointer-events: none;
+}
+#image-div canvas {
+    will-change: transform, opacity;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+
+
+/* Responsive for screen size less than 600px */
+@media (max-width:600px) {
+                                                        /* page1 */
+#page1{
+    width: 100%;
+    height: 60vh;
+    position: relative;
+}
+#bg-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    -o-object-fit: cover; 
+       object-fit: cover; 
+    -webkit-box-shadow: 0px 20px 40px 20px #000000; 
+            box-shadow: 0px 20px 40px 20px #000000;
+}
+#nav{
+    padding: 2vw 7vw;
+    margin-left: 1.2vw;
+    position: relative;
+    z-index: 1000;
+    /* background-color: #FFA63D; */
+    margin-bottom: 40vw;
+}
+#nav-part2{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    gap: 2.2vw;
+}
+#nav-part2 h4{
+    display: inline-block;
+    padding: 10px;
+    font-size: 2vw;
+    font-weight: 520;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+.hero{
+    /* background-color: aqua; */
+    overflow: hidden;
+    width: 71%;
+    margin-left: 5%;
+    margin-top: 0.5vw;
+   height: -webkit-fit-content;
+   height: -moz-fit-content;
+   height: fit-content;
+    /* background-color: aqua; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    z-index: 9999;
+}
+.hero h1{
+    font-size: 10vw;
+    line-height: 8vw;
+    text-transform: uppercase;
+    overflow-y: hidden;
+    position: relative;
+}
+#page1>h2{
+    font-size: 5vw;
+    font-family: "silk serif";
+    font-weight: 400;
+    position: absolute;
+    left: 5%;
+    top: 38%;
+    /* background-color: #c62828; */
+}
+#hero3 h2{
+    font-size: 8vw;
+    line-height: 8vw;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-bottom: 0.8vw solid #fff;
+    padding-bottom: 0.5vw;
+    margin: 0.5vw;
+    margin-right: 0.4vw;
+    /* transition: all 0.2s ease-out ; */
+}
+#hero3 h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
+    border-color: transparent;
+}
+#flag{
+    height: 25vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    opacity: 0;
+}
+#hero3{
+    position: relative;
+    z-index: 999;
+}
+                                                    /* page2 */
+#page2{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+#video-container{
+    width: 100%;
+    height: 70vh;
+    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    margin-left: 1%;
+    position: relative;
+    margin-top: 15vw;
+    background-size: cover;
+    background-position: center;
+}
+#video-container video{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    opacity: 0;
+}
+#video-cursor{
+    width: 8.5vw;
+    height: 8.5vw;
+    background-color: #FFA63D;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top:-10%;
+    left:70%;
+    z-index: 1;
+}
+#video-cursor i{
+    font-size: 2vw;
+}
+
+                                                        /* page3 */
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: #5e5d5d; */
+    position: relative;
+    /* padding: 0 4vw; */
+}
+#page3 h1{
+    text-transform: uppercase;
+    font-size: 9vw;
+    font-weight: 600;
+    margin-left: 15vw;
+    position: relative;
+    margin-bottom: 5vw;
+}
+#page3 h1::before{
+    content: "02";
+    font-size: 3vw;
+    position: absolute;
+    font-family: "silk serif";
+    left: -12%;
+    top: 10%;
+}
+.underline{
+    border: 1px solid #fff;
+    margin: 0vw 5vw;
+}
+.image-container-div{
+    margin-top: 5vw;
+    /* background-color: rgb(252, 23, 11); */
+    position: relative;
+    padding: 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+}
+.image-div{
+    /* background-color: #3F7DF4; */
+    position: relative;
+    overflow: hidden;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin:1vw;
+    visibility: hidden;
+    width: 80%;
+    height: 80%;
+}
+
+.image-div img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+}
+.page3-circle{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.page3-circle svg{
+    width: 26%;
+}
+.page3-circle2{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    
+}
+.page3-circle2 svg{
+    width: 26%;
+    rotate: -45deg;
+}
+.page3-circle3{
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 39.5vw;
+    margin-left: 9vw;
+}
+.page3-circle3 svg{
+    width: 26%;
+    rotate: -90deg;
+}
+.page3-project-circle{
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #FFA63D;
+    margin-top: 15vw;
+    margin-left: 34vw;
+}
+.page3-project-circle p{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1vw;
+}
+.page3-project-circle p Span{
+    font-family: "Silk Serif";
+    font-size: 1vw;
+    font-weight: 500;
+}
+.circle-in{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    scale: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    background-color: #fff;
+}
+.circle-in p{
+    text-align: center;
+    width: 80%;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 1vw;
+    font-weight: 500;
+    scale: 0;
+    opacity: 0;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    -webkit-transition-delay: 0.5s;
+         -o-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+}
+.page3-circle:hover .circle-in{
+    scale: 1;
+}
+.page3-circle:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle2:hover .circle-in{
+    scale: 1;
+}
+.page3-circle2:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle3:hover .circle-in{
+    scale: 1;
+}
+.page3-circle3:hover .circle-in p{
+    scale: 1;
+    opacity: 1;
+}
+
+                                            /* page4 */
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10vw;
+}
+#page4-content{
+    width: 90vw;
+    margin-left: 15%;
+    padding: 1vw 0;
+    margin-top: 10vw;
+}
+#page4-content h1{
+    font-size: 8vw;
+    /* background-color: #c62828; */
+    text-transform: uppercase;
+    position: relative;
+}
+#page4-content h1::before{
+    content: "03";
+    font-family: "Silk Serif";
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    left: -10%;
+    top:8%;
+}
+#underline{
+    width: 100%;
+    height: 2px;
+    margin-right: 0vw;
+    /* background-color: #c62828; */
+}
+/* #page4-ke just ander wala paragraph */
+.wavetext{   
+    width: 90%;
+    font-size: 4vw;
+    font-weight: 500;
+    /* background-color: #FFA63D; */
+    overflow:visible;
+}
+.wavetext span {
+    -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+            transform: translateY(10px);
+    display: inline-block;
+    white-space: pre;      /* Ye sabse important hai spaces ko sahi rakhne ke liye */
+    overflow: visible;     /* Taaki wo ajeeb se bars gayab ho jayein */
+    pointer-events: none;  /* Taaki letters par click karne se widget na khule */
+}
+#page4-flex{
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 2vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 2.5vw;
+    /* background-color: #5728c6; */
+    margin-top: 5vw;
+}
+#page4-flex img{
+    margin-top: 0vw; 
+    width: 90%;
+    height: 90vh;
+    margin-bottom: 5vh;
+}
+#page4-flex p{
+    width: 90%;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-right: 0vw;
+    font-size: 5vw;
+    /* background-color: #c62828; */
+}
+#page4-blue-div{
+    width: 90vw;
+    height: 100vh;
+    background-color: #3F7DF4;
+    padding: 5vw 3vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+.blue-div-elem{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom:2px solid #ffffff;
+    gap: 20vh;
+    margin-bottom: 5vh;
+    padding: 3vw;
+}
+.blue-div-elem h4{
+    font-size: 5vw;
+    margin-bottom: 5vh;
+    font-weight: 500;
+    /* background-color: blanchedalmond; */
+}
+.blue-div-elem p{
+    font-size: 4vw;
+    width: 15vw;
+    /* background-color: #c62828; */
+}
+                                                /* page5 */
+#page5{
+    width: 100%;
+    height: 50vh;
+    padding-top: 40vw;
+    overflow: hidden;
+    /* background-color: #c62828; */
+}
+
+.elem, .elem2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;        /* Do h4 ko ek line mein chipka deta hai */
+    white-space: nowrap;
+    margin-bottom: 0.5vw;
+}
+
+.elem h4, .elem2 h4 {
+    font-size: 14vw;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;      /* Text ko pichakne (compress) se rokta hai */
+    padding-right: 2vw;  /* Word ke beech ka gap */
+    /* background-color: #3F7DF4; */
+    -webkit-animation-name: marquee;
+            animation-name: marquee;
+    -webkit-animation-duration: 15s;
+            animation-duration: 15s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
+/* Reverse direction for second and fourth row */
+.elem2 h4 {
+    animation-direction: reverse;
+}
+
+/* Keyframes - ab ye exact move karega */
+@-webkit-keyframes marquee {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%); /* Perfect loop ke liye */
+    }
+}
+@keyframes marquee {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%); /* Perfect loop ke liye */
+    }
+}
+
+/* Silk Serif text styling */
+.elem span, .elem2 span {
+    font-family: "Silk Serif"; /* Ensure ye font loaded ho */
+    color: transparent;               /* Outline ki jagah ye solid white dikhega */
+    -webkit-text-stroke: 1px #fff;    /* Isse serif font saaf dikhega */
+}
+
+                                                /* footer */
+#footer{
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 5%;
+    margin-top: 0vw;
+}
+#footer h1{
+    text-transform: uppercase;
+    font-size: 11vw;
+    margin-bottom: 5vw;
+    position: relative;
+    opacity: 1;
+    margin-left: 5vw;
+}
+#footer h1::before{
+    content: "04";
+    font-family: "Silk Serif";
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    left: -1%;
+    top:-50%;
+}
+.underline-footer{
+    border: 1px solid #fff;
+    margin-right: 5vw;
+}
+#footer-div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-right: 15vw;
+    margin-bottom: 5vw;
+}
+.box{
+    margin: 6vw 5vw;
+    /* background-color: #3F7DF4; */
+}
+.box h6{
+    font-size: 4vw;
+    margin-bottom: 2vw
+}
+.box h5{
+    font-size: 6vw;
+    font-weight: 400;
+}
+#footer h4{
+    margin: 12vw 2vw;
+    font-size: 5vw;
+    font-weight: 500;
+    /* background-color: #FFA63D; */
+}
+}
