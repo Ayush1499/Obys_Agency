@@ -1,9 +1,10 @@
+let locoScroll
 function locomotiveAnimation(){
     gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
-const locoScroll = new LocomotiveScroll({
+locoScroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
   smooth: true,
   multiplier: 0.8, // Thoda slow but smooth
