@@ -226,7 +226,7 @@ function waveEffect(){
     })
 
     gsap.to("#page4-content h6 span",{
-    color: "royalblue",
+    color: "lightcyan",
     y:0,
     opacity:1,
     stagger:0.5,
