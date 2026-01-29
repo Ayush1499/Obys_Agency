@@ -3,25 +3,17 @@
     src: url(./font-style/plain-regular-webfont.ttf);
 }
 @font-face {
-    font-family: "plain light";
-    src: url(./font-style/plain-regular-webfont.ttf);
-}
-@font-face {
     font-family: "Silk Serif";
     src: url(./font-style/silkserif-lightitalic-webfont.ttf);
-}
-@font-face {
-    font-family: "Silk Serif";
-    src: url(./font-style/silkserif-regularitalic-webfont.ttf);
 }
 
 *{
     padding: 0px;
     margin: 0px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     color: white;
-    font-family: "Plain Light";
+    font-family: "plain Light";
 }
 html,body{
     width: 100%;
@@ -567,7 +559,7 @@ html,body{
 #underline{
     width: 90%;
     height: 2px;
-    background-color: #c62828;
+    background-color: #f9f9f9;
     margin: 5vw 0;
 }
 /* #page4-ke just ander wala paragraph */
